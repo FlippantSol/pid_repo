@@ -8,6 +8,9 @@ class Question(models.Model):
     
     def __str__(self):
         return self.question_text
+        
+    def was_published_recently(self):
+        return self.pub_date
 
 @python_2_unicode_compatible
 class Choice(models.Model):
@@ -18,7 +21,7 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
-from polls.models import Question,Choice
-from django.utils import timezone
+# from polls.models import Question,Choice
+#from django.utils import timezone
 
-q=Question(question_text="What's new?", pub_date=timezone.now())
+#q=Question(question_text="What's new?", pub_date=timezone.now())
